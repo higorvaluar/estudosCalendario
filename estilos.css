@@ -1,0 +1,119 @@
+/* Regra Universal */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Corpo do HTML */
+body {
+    background: rgba(109, 255, 246, 0.4);
+}
+
+/* Conteúdo */
+.conteudo {
+    left: 50%;
+    margin: 0 0 0 -250px;
+    position: absolute;
+    width: 500px;
+}
+.conteudo .calendario header {
+    position: relative;
+}
+
+/* h2 universal */
+h2 {
+    margin-top: 20px;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+/* Botões */
+.bt_antes, .bt_depois {
+    position: absolute;
+    top: 50%;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-top: -16px;
+    border: 2px solid #cbd1d2;
+    border-radius: 50%;
+    color: #cbd1d2;
+    font-size: 16px;
+    font-weight: bold;
+}
+.bt_antes {
+    left: 80px;
+}
+.bt_depois {
+    right: 80px;
+}
+.bt_antes:hover, .bt_depois:hover{
+    cursor: pointer;
+    background: #cbd1d2;
+    color: #f9f9f9;
+}
+
+/* Calendário */
+.calendario {
+    text-align: center;
+}
+.calendario table {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+.calendario table .dia_hoje {
+    background: #00addf; 
+    color: #f9f9f9;
+}
+.calendario thead {
+    background: rgba(55, 126, 94, 0.2);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.calendario td {
+    border: 2px solid rgba(55, 126, 94, 0.2);
+    height: 71.4px;
+    text-align: center;
+    width: 71.4px;
+}
+.calendario tbody td {
+    cursor: pointer;
+}
+.calendario tbody td:hover {
+    background: rgba(0, 173, 223, 0.8);
+    color: #f9f9f9;
+}
+.calendario table .dia_hoje {
+    background: #00addf;
+    color: #f9f9f9;
+}
+.calendario .mes_antes, .calendario .mes_depois {
+    color: #cdb1d2;
+}
+.calendario .mes_antes:hover, .calendario .mes_depois:hover {
+    background: #98a0a0;
+}
+
+/* Eventos */
+.evento {
+    position: relative;
+}
+.evento:after {
+    content:'';
+    width: 7px;
+    height: 7px;
+    left: 50%;
+    bottom: 7px;
+    margin: -3.5px 0 0 -3.5px;
+    background: #00addf;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+}
+.evento:hover:after {
+    background: #f9f9f9;
+}
+.evento .dia_hoje:after {
+    background: #f9f9f9;
+}
