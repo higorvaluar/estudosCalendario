@@ -8,17 +8,30 @@
 /* Corpo do HTML */
 body {
     background: rgba(109, 255, 246, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Conteúdo */
 .conteudo {
-    left: 50%;
-    margin: 0 0 0 -250px;
-    position: absolute;
-    width: 500px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 700px;
+    box-sizing: border-box;
+}
+.conteudo .calendario {
+    width: 60%;
 }
 .conteudo .calendario header {
-    position: relative;
+    position: 60%;
 }
 
 /* h2 universal */
@@ -30,23 +43,23 @@ h2 {
 
 /* Botões */
 .bt_antes, .bt_depois {
-    position: absolute;
-    top: 50%;
     height: 32px;
     width: 32px;
     line-height: 32px;
-    margin-top: -16px;
-    border: 2px solid #cbd1d2;
+    border: 2px solid #00addf;
     border-radius: 50%;
-    color: #cbd1d2;
+    color: #00addf;
     font-size: 16px;
     font-weight: bold;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .bt_antes {
-    left: 80px;
+    left: 10px;
 }
 .bt_depois {
-    right: 80px;
+    right: 10px;
 }
 .bt_antes:hover, .bt_depois:hover{
     cursor: pointer;
@@ -57,10 +70,20 @@ h2 {
 /* Calendário */
 .calendario {
     text-align: center;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+.calendario header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
 }
 .calendario table {
     margin-top: 20px;
     border-collapse: collapse;
+    width: 100%;
 }
 .calendario table .dia_hoje {
     background: #00addf; 
@@ -73,9 +96,10 @@ h2 {
 }
 .calendario td {
     border: 2px solid rgba(55, 126, 94, 0.2);
-    height: 71.4px;
+    height: 80px;;
     text-align: center;
-    width: 71.4px;
+    width: calc(100% / 7);
+    position: relative;
 }
 .calendario tbody td {
     cursor: pointer;
@@ -116,4 +140,44 @@ h2 {
 }
 .evento .dia_hoje:after {
     background: #f9f9f9;
+}
+
+/* Parte de eventos */
+
+.resumo-evento {
+    position: absolute;
+    background: rgba(0, 175, 223, 0.14);
+    color: #002503;
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 10;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.detalhe-evento {
+    width: 35%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: hidden;
+    max-height: 600px; 
+    margin-left: 20px;
+}
+.sobre-evento {
+    width: 35%;
+    padding: 10px;
+    background: rgba(232, 223, 255, 0.733);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: hidden;
+    max-height: 1000px;
+    margin-left: 20px;
+}
+.sobre-evento h3 {
+    margin-top: 0;
 }
